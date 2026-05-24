@@ -23,7 +23,7 @@ st.set_page_config(
 
 @st.cache_resource
 def train_model():
-    df = pd.read_csv('data/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+    df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
     df['TotalCharges'].fillna(df['TotalCharges'].median(), inplace=True)
     df.fillna(df.median(numeric_only=True), inplace=True)
